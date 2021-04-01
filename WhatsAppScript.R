@@ -1,5 +1,5 @@
 library(tidyverse)
-Chat <- read.csv("~/R/Data/WhatsApp Chat with Amarthya Dutta Gupta.txt", header=FALSE)
+#import data as file titled 'Chat'
 Chat <- Chat[!grepl("changed their phone number",Chat$V2,fixed=TRUE),]
 Chat <- as_tibble(Chat[-1, ]) %>%
   separate(V2, into = c("Time", "Name"), sep = " - ") %>%
